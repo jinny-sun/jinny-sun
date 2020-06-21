@@ -1,7 +1,7 @@
 ---
 layout: post
-title: CookieCutter - Personalized portion control using calorie prediction
-subtitle: by Jinny Sun
+title: CookieCutter
+subtitle: Personalized portion control using calorie prediction
 cover-img: /assets/img/cookie.jpg
 gh-repo: jinny-sun/cookie-cutter
 gh-badge: [star, fork, follow]
