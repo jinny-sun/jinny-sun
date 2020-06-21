@@ -44,9 +44,29 @@ subtitle: PhD graduate in bioengineering, aspiring data scientist
 
 - Designed and organized events (>150 ppl) on communication, interview strategies, and mental health.
 
+2016 – 2019 **Session leader**, Hyperpolarized MRI Technology Resource Center Workshop, UCSF 		    		
+
+-	Led three hands-on training sessions for an annual 2-day workshop with over 150 attendees.
+
 2015 –– **L.E.K. UC Berkeley – UCSF Case Competition**
 
 - Led a team of 5 graduate students in a case competition and won third place.
+
+2014-2019 –– **Graduate Division Delegate**, UC Berkeley & UCSF
+
+-	Represented the Bioengineering department and students at monthly student government meetings.
+
+### TEACHING
+
+-	Designed and led discussion and laboratory sections to >1500 students.
+
+Winter 2016 –– **Teaching Assistant**, Metabolism and Magnetic Resonance Spectroscopy (BioE 241), UCSF
+
+Summer 2013 –– **Undergraduate Student Instructor**, Organic Chemistry (Chem 3B/3BL), UC Berkeley
+
+Spring 2013 –– **Undergraduate Student Instructor**, General Chemistry (Chem 1A), UC Berkeley
+
+Fall 2012 –– **College of Chemistry Teaching Scholars Program**, General Chemistry (Chem 1AL), UC Berkeley
 
 ### EDUCATION
 2020 –– **UC Berkeley — UC San Francisco Joint Graduate Program** –– Ph.D., Bioengineering	              
