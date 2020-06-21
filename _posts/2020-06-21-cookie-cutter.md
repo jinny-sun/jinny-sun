@@ -43,5 +43,11 @@ Several regression models were assessed, including linear regression, random for
 
 The linear regression performed the worst, most likely due to the large number of features, and inaccurately assigned the largest coefficients, which tells the model the amount of calories per gram of ingredient, to irrelevant features. For example, the largest coefficient was assigned to salt. 
 
-All tree-based methods accurately identified the most important features contributing to calories, such as sugar, chocolate, and flour. Boosting models performed better than the random forest. While gradient boosting and XGBoost had similar performance metrics based on R<sup>2</sup>, gradient boosting was ultimately chosen as the preferred model since XGBoost had a tendency to overfit on the training data. 
+All tree-based methods accurately identified the most important features contributing to calories, such as sugar, chocolate, and flour. Boosting models performed better than the random forest. While gradient boosting and XGBoost had similar performance metrics based on R<sup>2</sup>, gradient boosting was ultimately chosen as the preferred model since XGBoost had a larger over-estimation of the calories of an individual ingredient. 
 
+| 1 cup (ingredient) | True Calories | Predicted<br>(Linear Reg.) | Predicted<br>(Random Forest) | Predicted<br>(GBR) | Predicted<br>(XGBoost) |
+| :---- |:-----------: | :---------------: |:----------------: |:----------------: |:----------------: |
+| Sugar | 773 | 2,078 | 2,426 | 1,826 | 2,324 |
+| Flour | 445 | 1,730 | 2,478 | 1,777 | 1,955 |
+| Chocolate | 805 | 2,260 | 3,287 | 2,652 | 2,971 |
+| Salt | 0 | 33,303 | 3,567 | 3,637 | 2,755 |
