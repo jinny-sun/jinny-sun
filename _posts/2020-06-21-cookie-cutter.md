@@ -17,7 +17,7 @@ CookieCutter uses **bag of words** vectorization to convert ingredient lists int
 
 ## Text processing
 
-Below is an example recipe:
+Here is an example recipe.
 
 | Recipe Name | Ingredients | Number of Servings | Calories per Serving |
 | :---------- |:----------- | :----------------: | :------------------: |
@@ -46,7 +46,7 @@ The linear regression performed the worst, most likely due to the large number o
 
 All tree-based methods accurately identified the most important features contributing to calories, such as sugar, chocolate, and flour. Boosting models performed better than the random forest. While gradient boosting and XGBoost had similar performance metrics based on R<sup>2</sup>, gradient boosting was ultimately chosen as the preferred model since XGBoost had a larger over-estimation of the calories of an individual ingredient. 
 
-| 1 cup (ingredient) | True Calories | Predicted<br>(Linear Reg.) | Predicted<br>(Random Forest) | Predicted<br>(GBR) | Predicted<br>(XGBoost) |
+| 1 cup (ingredient) | True Calories | Predicted<br>(Lin. Reg.) | Predicted<br>(Random Forest) | Predicted<br>(Gradient Boosting) | Predicted<br>(XGBoost) |
 | :---- |:-----------: | :---------------: |:----------------: |:----------------: |:----------------: |
 | Sugar | 773 | 2,078 | 2,426 | 1,826 | 2,324 |
 | Flour | 445 | 1,730 | 2,478 | 1,777 | 1,955 |
