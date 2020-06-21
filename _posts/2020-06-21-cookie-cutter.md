@@ -5,7 +5,7 @@ subtitle: by Jinny Sun
 cover-img: /assets/img/cookie.jpg
 gh-repo: jinny-sun/cookie-cutter
 gh-badge: [star, fork, follow]
-tags: [nlp, python]
+tags: [python, nlp]
 ---
 
 Do you love baking cookies? Have you ever used a recipe that didn't include important nutritional information, such as the calories per cookie? CookieCutter is a web app that predicts the calories per cookie of a given recipe. It also provides personalized portion control suggestions to help you meet your caloric needs.
