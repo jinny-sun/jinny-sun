@@ -12,6 +12,8 @@ author: Jinny Sun
 # --- List of links in the navigation bar --- #
 
 navbar-links:
+  Papers: "papers"
+  Resume: "resume"
   About Me: "aboutme"
  # Resources:
  #   - Beautiful Jekyll: "https://beautifuljekyll.com"
