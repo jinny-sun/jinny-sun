@@ -21,7 +21,10 @@ Here is an example recipe.
 
 | Recipe Name | Ingredients | Number of Servings | Calories per Serving |
 | :---------- |:----------- | :----------------: | :------------------: |
-| Best cookie recipe | ¾ cup White Sugar, granulated<br>8 ounces Butter (softened)<br>2 ½ cups All-purpose Flour<br>1 teaspoon Baking Soda | 12 | 214.3 |
+| Best cookie recipe | ¾ cup White Sugar, granulated | 12 | 214.3 |
+|   | 8 ounces Butter (softened) |
+|   | 2 ½ cups All-purpose Flour
+|   | 1 teaspoon Baking Soda |
 
 The ingredients strings are pre-processed using RegEx and NLTK library. This includes:
 - Converting unicode characters to strings
