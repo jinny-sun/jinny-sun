@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About me
-subtitle: PhD graduate in bioengineering, aspiring data scientist
+subtitle: PhD graduate in bioengineering, Insight Data Science fellow
 ---
 
 ![Profile Picture](/assets/img/headshot2.jpg)
