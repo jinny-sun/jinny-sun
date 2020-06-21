@@ -18,6 +18,7 @@ CookieCutter uses **bag of words** vectorization to convert ingredient lists int
 ## Text processing
 
 Below is an example recipe:
+
 | Recipe Name | Ingredients | Number of Servings | Calories per Serving |
 | :---------- |:----------- | :----------------: | :------------------: |
 | Best cookie recipe | ¾ cup White Sugar, granulated<br>8 ounces Butter (softened)<br>2 ½ cups All-purpose Flour<br>1 teaspoon Baking Soda | 12 | 214.3 |
