@@ -18,9 +18,9 @@ subtitle: PhD graduate in bioengineering, aspiring data scientist
 
 **Data Science Fellow**, Insight Data Science, San Francisco, CA                           	         	   May 2020 - Present
 
-- Built a Streamlit web app that predicts the calories per serving of a given recipe based on the ingredients list to help consumers eat healthier.
+- Built a Streamlit [web app](cookie-cutter.xyz) that predicts the calories per serving of a given recipe based on the ingredients list to help consumers eat healthier.
 - Optimized model performance from 59% to 86% R2 using natural language processing and gradient boosting regression in Python.
-- github.com/jinny-sun/cookie-cutter | cookie-cutter.xyz
+- [Git Repo](github.com/jinny-sun/cookie-cutter) 
 
 2014-2020 –– **Graduate Student Researcher**, UCSF, San Francisco, CA
 
