@@ -12,12 +12,11 @@ author: Jinny Sun
 # --- List of links in the navigation bar --- #
 
 navbar-links:
-  Papers: "papers"
   Resume: "resume"
   About Me: "aboutme"
- # Resources:
- #   - Beautiful Jekyll: "https://beautifuljekyll.com"
- #   - Learn markdown: "https://www.markdowntutorial.com/"
+  Papers:
+    - PUBMED: "https://www.ncbi.nlm.nih.gov/myncbi/1xaou-Fthsf5x2/bibliography/public/"
+    - ORCID: "https://orcid.org/0000-0002-3743-7391"
  # Author's home: "https://deanattali.com"
 
 # --- Logo --- #
