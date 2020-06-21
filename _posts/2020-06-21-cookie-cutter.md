@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Behind the scenes of CookieCutter
+title: CookieCutter: Personalized portion control using calorie prediction
 subtitle: by Jinny Sun
 cover-img: /assets/img/cookie.jpg
 gh-repo: jinny-sun/cookie-cutter
@@ -29,7 +29,7 @@ The ingredients strings are pre-processed using RegEx and NLTK library. This inc
 - Removing plurals, punctuation, hypenated words, anything in parentheses, whitespace, and stopwords
 
 ## NLP
-After the ingredient strings was processed, part-of-speech tagging was used to select for nouns to remove unnecessary words. The 20 most frequent bigrams (where the first token was an adjective or noun, and second token was a noun) were also included in the analysis. The number of features was then reduced from 372 to 79 using frequency-based feature selection to only include tokens that appeared in at least 10 recipes. 
+After the ingredient strings was processed, part-of-speech tagging was used to select for nouns to remove unnecessary words. The 20 most frequent bigrams (where the first token was an adjective or noun, and second token was a noun) were also included in the analysis. The number of features was then reduced from 372 to 79 using frequency-based feature selection to only include tokens that appeared in at least 10 recipes. Ingredients were then vectorized using bag of words. Since higher frequencies of an ingredient token should correlate with the predictor variable (calories), bag of words is preferred over TF-IDF, which gives lower weight to tokens that appear more frequently.
 
 ## Model Validation
 
