@@ -4,35 +4,17 @@ title: Classification of prostate cancer using metabolic biomarkers
 subtitle: Metabolic profiling of prostate cancer biopsies using HR-MAS
 gh-repo: jinny-sun/metabolomics-prostate-cancer
 gh-badge: [star, fork, follow]
-tags: [metabolomics,cancer,nmr, R]
+tags: [metabolomics,cancer,nmr,R]
 comments: true
 ---
 
-Prostate cancer is the most commonly diagnosed non-cutaneous cancer in
-men and the second leading cause of cancer death. Due to over-diagnosis
-and over-treatment of indolent low-risk disease, active surveillance
-(AS) involving serial measurements of serum prostate-specific antigen
-(PSA) and biopsies as well as multiparametric MRI has been implemented
-in the clinic to monitor disease progression and reduce rates of
-over-treatment. A pressing need in the clinical management of patients
-with prostate cancer at the time of diagnosis is an accurate method for
-distinguishing aggressive, potentially lethal prostate cancer from
-indolent disease in individual patients in order to assess whether
-active surveillance is appropriate or aggressive treatment is needed.
+Prostate cancer is the most commonly diagnosed non-cutaneous cancer in men and the second leading cause of cancer death. Due to over-diagnosis and over-treatment of indolent low-risk disease, active surveillance (AS) involving serial measurements of serum prostate-specific antigen (PSA) and biopsies as well as multiparametric MRI has been implemented in the clinic to monitor disease progression and reduce rates of over-treatment. A pressing need in the clinical management of patients with prostate cancer at the time of diagnosis is an accurate method for distinguishing aggressive, potentially lethal prostate cancer from indolent disease in individual patients in order to assess whether active surveillance is appropriate or aggressive treatment is needed.
 
-The goal of this analysis is to identify metabolic biomarkers of
-prostate cancer using 1D 1H HR-MAS spectroscopy of fresh prostate tissue
-specimen. This analysis has significant clinical impact by informing
-doctors which patients should remain under active surveillance or
-undergo treatment.
+The goal of this analysis is to identify metabolic biomarkers of prostate cancer using 1D 1H HR-MAS spectroscopy of fresh prostate tissue specimen. This analysis has significant clinical impact by informing doctors which patients should remain under active surveillance or undergo treatment.
 
 # Experiment Details
 
-1D 1H CPMG spectra was acquired from fresh prostate cancer biopsies
-using high-resolution magic angle spinning (HR-MAS) NMR. After the
-experiment, biopsies were formalin-fixed and paraffin embedded for
-pathologic analysis. Experimental methods can be found in the following
-publications:
+1D 1H CPMG spectra was acquired from fresh prostate cancer biopsies using high-resolution magic angle spinning (HR-MAS) NMR. After the experiment, biopsies were formalin-fixed and paraffin embedded for pathologic analysis. Experimental methods can be found in the following publications:
 
 Swanson, Mark G., et al. “Proton HR‐MAS spectroscopy and quantitative
 pathologic analysis of MRI/3D‐MRSI‐targeted postsurgical prostate
@@ -154,11 +136,7 @@ labeled with individual biospy IDs.
 ``` r
 # Melt matrix to plot using ggplot
 data.nt.melt <- melt(data.nt)
-```
 
-    ## Using ID, treatment, cancer, gleason_grade as id variables
-
-``` r
 data.nt.metabolites <- data.nt.melt[grep("*1D", data.nt.melt$variable), ]
 
 # Plot
@@ -170,13 +148,6 @@ metabolites.plot <- ggplot(data.nt.metabolites, aes (x = variable, y = log(value
   xlab("Metabolites") + 
   ylab("log(Metabolite concentrations (mM/mg tissue))")
 
-# plot without sample labels
-metabolites.plot
-```
-
-![](/assets/img/metabolomics_project/metabolomics-4-1.png)<!-- -->
-
-``` r
 # plot with sample labels
 metabolites.plot +
   geom_text(aes(label = ID), size = 2) 
@@ -194,10 +165,9 @@ graph are removed using the following code:
 data.nt.c <- filter (data.nt, !grepl("P51",ID), !grepl("P125",ID))
 ```
 
-There are also several NA values throughout the dataset. A majority of
-samples have NA values in Cr1D and Glutathione1D. Let’s remove these
-variables using `select`. There are also a few metabolite variables with
-three NA values. Let’s identify the samples with these NA values, and
+There are also several null values throughout the dataset. A majority of
+samples have null values in Cr1D and Glutathione1D. Remove these
+variables using `select` and remove the samples with null values (they happen to be the same samples), and
 remove them using `filter`. Now there are no obvious outliers.
 
 ``` r
@@ -259,11 +229,7 @@ data.nt.c <- filter (data.nt.c, !grepl("BY331",ID), !grepl("BY332",ID), !grepl("
 
 #melt matrix and select columns related to metabolite concentrations
 data.nt.c.melt <- melt(data.nt.c)
-```
 
-    ## Using ID, treatment, cancer, gleason_grade as id variables
-
-``` r
 data.nt.c.metabolites <- data.nt.c.melt[grep("*1D", data.nt.c.melt$variable), ]
 
 #plot
@@ -344,8 +310,7 @@ vs. malignant). The strongest predictors of tumor malignancy are:
 GPC1D, Lactate 1D, Alanine 1D, and Choline 1D. The overall correlation
 between predictor variables is low. However, there are some metabolites
 that are strongly correlated. This is expected since many metabolites
-are interconnectedor and therefore regulated by the same metabolic
-pathways.
+are interconnected and regulated by the same metabolic pathways.
 
 ``` r
 #remove nonnumerical features
@@ -369,7 +334,7 @@ corrplot(correlation, type="lower", order="hclust", tl.col="black", tl.srt=45)
 
 ### Prediction using k-Nearest Neighbors
 
-We will perform prediction of malignancy using k-Nearest Neighbors
+Cancer aggressiveness will be predicted using k-Nearest Neighbors
 (k-NN). In brief, k-NN performs prediction by minimiznig the distance
 between samples. This is a supervised algorithm which requires a labeled
 test set. Before using kNN for prediction, the optimal number of nearest
@@ -464,7 +429,7 @@ Ytest <- test$class
 ```
 
 Now perform a 10-Fold Cross Validation using `kNNk.cv` on the train
-dataset.
+dataset to identify the number of neighbors (k) with the lowest minimal misclassification error.
 
 ``` r
 #Make predictions by kNN
@@ -519,8 +484,7 @@ text(Ytestfactor, labels = TrueValues, pos = 3)
 ![](/assets/img/metabolomics_project/metabolomics-13-1.png)<!-- -->
 
 Determine model performance by determining the accuracy, sensitivity,
-and specificity using `confusionMatrix`.
-
+and specificity using `confusionMatrix`. Model performance will be determined based on the sensitivity, or recall, in order to minimize Type II errors (i.e., classifying a tumor as benign when it is actually aggressive cancer).
 ``` r
 library(caret)
 ```
