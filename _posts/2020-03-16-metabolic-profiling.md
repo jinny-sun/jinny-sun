@@ -59,81 +59,19 @@ with a Gleason score of 6 or under should remain under active
 surveillance, and patients with a Gleason score of 7 or higher should
 undergo treatment.
 
-## Load data
-
-The data is presented in csv format.
-
-``` r
-data = read.csv("ProstateHrmas.csv", header = T, stringsAsFactors = FALSE, fill = T)
-```
-
-## Load libraries
-
-Load the libraries required for this analysis.
-
-``` r
-library(tidyverse)
-library(reshape2)
-library(RColorBrewer)
-library(lattice)
-library(corrplot)
-library(class)
-library(boot)
-```
-
-## Clean data
+## Data Wrangling
 
 This dataset of consists of 287 tissue samples (biopsies, post-surgical
 tissues, and primary cell culture) and 32 features, including
 information on the patient history, 6 parameters pertaining to HR-MAS
-spectroscopy, histopathology, and 19 metabolite concentrations. Here, we
-are interested in some of the features pertaining to patient history,
+spectroscopy, histopathology, and 19 metabolite concentrations. This 
+analysis will focus on features pertaining to patient history,
 histopathology, and metabolite concentrations. Features that we are not
 interested in are removed using `select`. This analysis will focus on
 comparing the metabolite concentrations of fresh tissue samples, namely
 biopsies (BY) and post-surgical tissues (P), from patients who have not
 received treatment. Use `filter` to remove cell culture (CC) tissue
 samples.
-
-``` r
-head(data)
-```
-
-    ##      ID treatment    treatment_type tissue_mass spin_rate exp_duration
-    ## 1 BY252 Radiation Brachytherapy PPI        5.98      2250           NA
-    ## 2 BY253      None      No Treatment        5.69      2250          162
-    ## 3 BY259      None      No Treatment        6.44      2250           NA
-    ## 4 BY260      None      No Treatment        7.40      2250          130
-    ## 5 BY261      None      No Treatment        7.58      2250          145
-    ## 6 BY262      None      No Treatment        7.01      2250          116
-    ##   echo_time mixing_time h1_90deg_pw glandular_normal stroma_normal cancer
-    ## 1       144          40        8.15              11%           88%     0%
-    ## 2       144          40        7.55               8%           55%     5%
-    ## 3       144          40          NA              33%           66%     0%
-    ## 4       144          40          NA              35%           65%     0%
-    ## 5       288          40        7.85               6%           75%    18%
-    ## 6       144          40          NA               5%           85%     0%
-    ##   gleason_grade  PC1D GPC1D Ethanolamin1D  PE1D Lactate1D Alanine1D
-    ## 1        Benign 0.161 0.094         0.405 0.844     1.081     0.179
-    ## 2          G3+3 0.848 0.172         0.697 1.299     1.434     0.793
-    ## 3        Benign 0.262 0.390         0.362 1.235     0.864     0.410
-    ## 4        Benign 0.176 0.241         0.445 0.753     0.546     0.263
-    ## 5          G3+3 0.001 0.588         0.283 1.029    19.029     0.621
-    ## 6        Benign 0.193 0.060         0.000 0.670     0.401     0.207
-    ##   Choline1D Citrate1D mInositol1D sInositol1D PCr1D  Cr1D Glutamate1D
-    ## 1     0.062     0.193       1.885       0.000    NA 0.638       1.198
-    ## 2     0.153     0.518       3.238       0.222    NA 0.390       2.858
-    ## 3     0.147     5.517       4.040       0.524    NA 0.588       2.081
-    ## 4     0.219     4.039       2.527       0.325    NA 0.432       1.517
-    ## 5     0.159     2.513       4.590       0.045    NA 0.290       1.973
-    ## 6     0.073     0.144       2.665       0.056    NA 0.401       1.434
-    ##   Glutamine1D Glycine1D Spermidine1D Spermine1D Taurine1D Glutathione1D
-    ## 1       0.325     1.785        0.000      0.005     1.856            NA
-    ## 2       0.731     2.993        0.000      0.000     3.244            NA
-    ## 3       0.563     1.183        0.783      0.452     3.093            NA
-    ## 4       0.489     0.662        0.536      0.516     2.096            NA
-    ## 5       5.761     1.900        0.877      0.428     2.584            NA
-    ## 6       0.347     0.815        0.000      0.000     1.653            NA
 
 ``` r
 data.2 <- select(data, -(treatment_type:stroma_normal))
