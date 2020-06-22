@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Metabolic profiling of prostate cancer biopsies using HR-MAS
-subtitle: NMR-based metabolomics
+title: Classification of prostate cancer using metabolic biomarkers
+subtitle: Metabolic profiling of prostate cancer biopsies using HR-MAS
 gh-repo: jinny-sun/metabolomics-prostate-cancer
 gh-badge: [star, fork, follow]
 tags: [metabolomics,cancer,nmr, R]
