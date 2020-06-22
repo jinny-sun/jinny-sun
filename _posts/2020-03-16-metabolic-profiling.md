@@ -8,8 +8,6 @@ tags: [metabolomics,cancer,nmr, R]
 comments: true
 ---
 
-# Introduction
-
 Prostate cancer is the most commonly diagnosed non-cutaneous cancer in
 men and the second leading cause of cancer death. Due to over-diagnosis
 and over-treatment of indolent low-risk disease, active surveillance
