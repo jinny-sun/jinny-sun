@@ -238,11 +238,7 @@ metabolites.plot <- ggplot(data.nt.metabolites, aes (x = variable, y = log(value
 metabolites.plot
 ```
 
-    ## Warning: Removed 487 rows containing non-finite values (stat_boxplot).
-
-    ## Warning: Removed 349 rows containing missing values (geom_point).
-
-![](images/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+![](assets/img/metabolomics_project/metabolomics-4-1.png)<!-- -->
 
 ``` r
 # plot with sample labels
@@ -250,13 +246,7 @@ metabolites.plot +
   geom_text(aes(label = ID), size = 2) 
 ```
 
-    ## Warning: Removed 487 rows containing non-finite values (stat_boxplot).
-    
-    ## Warning: Removed 349 rows containing missing values (geom_point).
-
-    ## Warning: Removed 349 rows containing missing values (geom_text).
-
-![](images/figure-gfm/unnamed-chunk-4-2.png)<!-- -->
+![](assets/img/metabolomics_project/metabolomics-4-2.png)<!-- -->
 
 There are two samples, P51 and P125, that have outliers in several
 different metabolites, hinting that this is due to experimental error.
@@ -350,9 +340,7 @@ ggplot(data.nt.c.metabolites, aes (x = variable, y = log(value))) +
   ylab("log(Metabolite concentrations (mM/mg tissue))")
 ```
 
-    ## Warning: Removed 128 rows containing non-finite values (stat_boxplot).
-
-![](images/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](assets/img/metabolomics_project/metabolomics-6-1.png)<!-- -->
 
 For this analysis, we want to compare biopsy tissues that are benign
 (Gleason score \< 6) and cancerous (Gleason score ≥ 6). Let’s plot a
@@ -367,7 +355,7 @@ hist + ggtitle("Histogram of Predictor Variable") +
   xlab("Benign vs. malignant prostate cancer") + ylab("Sample Size")
 ```
 
-![](images/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](assets/img/metabolomics_project/metabolomics-7-1.png)<!-- -->
 
 The majority of samples (~70%) are benign, 17% of samples have a Gleason
 grade of 3+3 and are considered “low grade” tumors that should remain
@@ -407,7 +395,7 @@ hist +
   ylim(0, 150)
 ```
 
-![](images/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](assets/img/metabolomics_project/metabolomics-8-1.png)<!-- -->
 
 ## Statistical Analysis
 
@@ -434,14 +422,14 @@ par(mfrow = c(1,1))
 barplot(correlation[18,-c(18)], main = "Correlation of predictor variables with response variable", las = 2)
 ```
 
-![](images/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](assets/img/metabolomics_project/metabolomics-9-1.png)<!-- -->
 
 ``` r
 #plot correlation matrix
 corrplot(correlation, type="lower", order="hclust", tl.col="black", tl.srt=45)
 ```
 
-![](images/figure-gfm/unnamed-chunk-9-2.png)<!-- -->
+![](assets/img/metabolomics_project/metabolomics-9-2.png)<!-- -->
 
 ### Prediction using k-Nearest Neighbors
 
@@ -564,7 +552,7 @@ MCerror
 plot(klist, MCerror, main="Misclassification Error Rate for each k", xlab="k", ylab="Misclassification Error")
 ```
 
-![](images/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](assets/img/metabolomics_project/metabolomics-12-1.png)<!-- -->
 
 ``` r
 # Use k with lowest misclassification error
@@ -592,7 +580,7 @@ plot(Ytestfactor, main = "Distribution of Actual Values \nfor test data", xlab =
 text(Ytestfactor, labels = TrueValues, pos = 3)
 ```
 
-![](images/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](assets/img/metabolomics_project/metabolomics-13-1.png)<!-- -->
 
 Determine model performance by determining the accuracy, sensitivity,
 and specificity using `confusionMatrix`.
