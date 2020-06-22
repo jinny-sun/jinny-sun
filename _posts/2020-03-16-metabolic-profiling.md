@@ -98,12 +98,6 @@ received treatment. Use `filter` to remove cell culture (CC) tissue
 samples.
 
 ``` r
-dim(data)
-```
-
-    ## [1] 287  32
-
-``` r
 head(data)
 ```
 
@@ -179,12 +173,6 @@ head(data.2)
 
 ``` r
 data.nt <- filter (data.2, treatment == "None", !grepl("*CC",ID))
-dim(data.nt)
-```
-
-    ## [1] 200  23
-
-``` r
 head(data.nt)
 ```
 
