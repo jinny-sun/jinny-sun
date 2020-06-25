@@ -1,1 +1,1 @@
-Created GitHub pages using [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll).
+Created a personal GitHub pages website using [Beautiful Jekyll](https://github.com/daattali/beautiful-jekyll).
