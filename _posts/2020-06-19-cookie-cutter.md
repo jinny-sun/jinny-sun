@@ -6,6 +6,7 @@ cover-img: /assets/img/cookie.jpg
 gh-repo: jinny-sun/cookie-cutter
 gh-badge: [star, fork, follow]
 tags: [python, nlp]
+description: I am currently a Data Science Fellow at Insight Data Science. I finished my PhD from the Joint UC Berkeley – UC San Francisco Graduate Program in Bioengineering in 2020. For my dissertation, I applied signal processing, image processing and machine learning methods to biomedical applications in metabolomics and transcriptomics field. I also performed kinetic modeling of time-series data to predict therapeutic response in prostate and renal cancer. I love working on unsolved challenges, and previously worked on one of Google X's moonshot projects. I am excited to apply my creativity and problem-solving skills to solve new challenges in data science.
 ---
 
 Do you love baking cookies? Have you ever used a recipe that didn't include important nutritional information, such as the calories per cookie? CookieCutter is a web app that predicts the calories per cookie of a given recipe. It also provides personalized portion control suggestions to help you meet your caloric needs.
