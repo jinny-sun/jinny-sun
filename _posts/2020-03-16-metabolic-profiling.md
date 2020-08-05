@@ -6,6 +6,7 @@ gh-repo: jinny-sun/metabolomics-prostate-cancer
 gh-badge: [star, fork, follow]
 tags: [metabolomics,cancer,nmr,R]
 comments: true
+description: I am currently a Data Science Fellow at Insight Data Science. I finished my PhD from the Joint UC Berkeley – UC San Francisco Graduate Program in Bioengineering in 2020. For my dissertation, I applied signal processing, image processing and machine learning methods to biomedical applications in metabolomics and transcriptomics field. I also performed kinetic modeling of time-series data to predict therapeutic response in prostate and renal cancer. I love working on unsolved challenges, and previously worked on one of Google X's moonshot projects. I am excited to apply my creativity and problem-solving skills to solve new challenges in data science.
 ---
 
 Prostate cancer is the most commonly diagnosed non-cutaneous cancer in men and the second leading cause of cancer death. Due to over-diagnosis and over-treatment of indolent low-risk disease, active surveillance (AS) involving serial measurements of serum prostate-specific antigen (PSA) and biopsies as well as multiparametric MRI has been implemented in the clinic to monitor disease progression and reduce rates of over-treatment. A pressing need in the clinical management of patients with prostate cancer at the time of diagnosis is an accurate method for distinguishing aggressive, potentially lethal prostate cancer from indolent disease in individual patients in order to assess whether active surveillance is appropriate or aggressive treatment is needed.
