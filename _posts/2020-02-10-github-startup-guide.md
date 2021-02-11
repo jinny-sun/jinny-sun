@@ -36,4 +36,16 @@ description: Are you setting up your github account for the first time? Here are
 - ```$ git config --global user.email "[insert your email here]"```
 - If you don't want to share your personal email, follow the steps in this [link](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/setting-your-commit-email-address) on how to use an anonymous email: 
 
+## Create A New Branch
+
+If you don't have permission to push changes to the master branch, check out a new branch and submit a pull request. This typically initiates a code review to determine if additional changes need to be made before pushing to the master branch. Once the code changes have been reviewed and approved, it can be merged by someone who has merge ability. 
+
+[link](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository)
+
+## Pull Requests
+
+Assignee: The person who submitted the pull request, someone who will work on suggestions from thepull request, QA person, and the person reponsible for merging the code.
+Reviewer: Someone you want to review the code and ultimately approves the pull request. 
+
+More information on how to create a pull request and check it out on your local responsitory can be found [here](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/checking-out-pull-requests-locally)
 
